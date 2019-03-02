@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <form id="main" name = "main" method="POST">
+        Nom: <input id="name" name="name" /> <span id="msgName" style="color:red"></span><br />
+        Email: <input id="email" name="email" /> <span id="msgEmail" style="color:red"></span><br />
+        Age: <input id="age" name="age" /> <span id="msgAge" style="color:red"></span><br />
+        Town: <select id="town" name="town">
+            <option value="" selected> </option>
+            <option value="Nice">Nice</option>
+            <option value="Cannes">Cannes</option>
+            <option value="St Tropez">St Tropez</option>
+            </select>
+            <span id="msgTown" style="color:red"></span><br />
+        <input type="button" value="ok" id="verif"/>
+    </form>
+
+    <script>
+        $(document).ready(function() {    //sinon jQuery
+            $("#verif").click(function() {
+
+                // initialisation
+                $("#name").css({"border" : "1px solid #cccccc"});
+                $("#msgName").html("");
+
+                $("#email").css({"border" : "1px solid #cccccc"});
+                $("#msgEmail").html("");
+
+                $("#age").css({"border" : "1px solid #cccccc"});
+                $("#msgAge").html("");
+
+                $("#town").css({"border" : "1px solid #cccccc"});
+                $("#msgTown").html("");
+                
+                
+                // testing the name
+
+                let name = $("#name").val();
+                if (name === "") {
+                    $("#msgName").html("Veuillez saisir votre nom!");
+                    $("#name").focus();
+                    $("#name").css({"border" : "1px solid #ff0000"});
+                    return false;
+                }
+
+                let voyelle = "aeiou";
+                let cptName = 0;
+
+                for (let i = 0; i < voyelle.length; i++) {
+                    if (name.indexOf(voyelle[i]) >= 0) {
+                        cptName++;
+                    }
+                }
+                
+                if (cptName === 0) {
+                    $("#msgName").html("Votre nom semble incorrect!");
+                    $("#name").focus();
+                    $("#name").css({"border" : "1px solid #ff0000"});
+                    return false;
+                }
+                
+
+                let email = $("#email").val();
+
+                if (email === "") {
+                    $("#msgEmail").html("Veuillez saisir votre email!");
+                    $("#email").focus();
+                    $("#email").css({"border" : "1px solid #ff0000"});
+                    return false;
+                }
+
+                // testing the email
+
+                let forbidden = "*/|\"\'\` ;:";
+                let cptEmail = 0;
+                for (let i = 0; i < forbidden.length; i++) {
+                    if (email.indexOf(forbidden[i]) >= 0) {
+                        cptEmail++;
+                        if (cptEmail > 0) {
+                            break;
+                        }
+                    }
+                }
+
+                if (cptEmail > 0) {
+                    $("#msgEmail").html("Votre email semble incorrect!");
+                    $("#email").focus();
+                    $("#email").css({"border" : "1px solid #ff0000"});
+                    return false;
+                }
+                
+                if (email.indexOf("@", 1) === -1) {
+                    $("#msgEmail").html("Votre email semble incorrect, vous n'avez pas tapez d'\"@\" ou il est mal placé!");
+                    $("#email").focus();
+                    $("#email").css({"border" : "1px solid #ff0000"});
+                    return false;
+                }
+                
+                let posAero = email.indexOf("@");
+                
+                if (email.indexOf(".", posAero + 2) === -1) {
+                    $("#msgEmail").html("Votre email semble incorrect, vous n'avez pas placé le \".\" au bon endroit!");
+                    $("#email").focus();
+                    $("#email").css({"border" : "1px solid #ff0000"});
+                    return false;
+                }
+
+                let posPoint = email.indexOf(".", posAero); 
+                if ((email.length - posPoint) <= 2) {
+                    $("#msgEmail").html("Votre email semble incorrect, vous n'avez pas saisi un bon domain");
+                    $("#email").focus();
+                    $("#email").css({"border" : "1px solid #ff0000"});
+                    return false;
+                }
+
+                // testing the age
+                if ($("#age").val() === "") {
+                    $("#msgAge").html("Veuillez saisir votre age!");
+                    $("#age").focus();
+                    $("#age").css({"border" : "1px solid #ff0000"});
+                    return false;
+                }
+
+                if (isNaN(document.main.age.value)) {
+                    $("#msgAge").html("Votre age semble incorrect!");
+                    $("#age").focus();
+                    $("#age").css({"border" : "1px solid #ff0000"});
+                    return false;
+                }
+
+                if ($("#age").val() < 18 || $("#age").val() > 120) {
+                    $("#msgAge").html("Votre age semble incorrect!!!");
+                    $("#age").focus();
+                    $("#age").css({"border" : "1px solid #ff0000"});
+                    return false;
+                }
+
+
+                // testing the town
+
+                if ($("#town").val() === "") {
+                    $("#msgTown").html("Veuillez choisir une ville de la liste!");
+                    $("#town").focus();
+                    $("#town").css({"border" : "1px solid #ff0000"});
+                    return false;
+                }
+            })
+        })
+    </script>
+</body>
+</html>

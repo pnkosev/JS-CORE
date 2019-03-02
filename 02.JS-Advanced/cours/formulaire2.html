@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <form>
+        <div id="msg">Entrez le nombre d'enfants: <input id="nbEnf" /> <span id="msgNbEnf" style="color:red"></span><br />
+        <input id="verif" type="button" value="OK" /></div>
+
+        <p id="zeroEnf" style="display: none">Merci d'avoir répondu à notre questionnaire!</p>
+
+        <div id="enf1" style="display: none">
+            Veillez tapez le nom de votre premier enfant: <input id="nom1" /><br />
+        </div>
+        <div id="enf2" style="display: none">
+            Veillez tapez le nom de votre deuxième enfant: <input id="nom2" /><br />
+        </div>
+        <div id="enf3" style="display: none">
+            Veillez tapez le nom de votre troisième enfant: <input id="nom3" /><br />
+        </div>
+        <input id="verif2" style="display: none" value="OK" type="button"/>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $("#verif").click(function() {
+
+                // initialisation
+
+                $("#nbEnf").css({"border" : "1px solid #cccccc"});
+                
+
+                // testing the number of kids
+
+                let numberOfChild = $("#nbEnf").val();
+
+                if (numberOfChild === "") {
+                    $("#msgNbEnf").html("Veuillez entrer le nombre d'enfants!");
+                    $("#nbEnf").focus();
+                    $("#nbEnf").css({"border": "1px solid #ff0000"});
+                    return false;
+                }
+
+                if (numberOfChild < 0) {
+                    $("#msgNbEnf").html("Veuillez entrer un nombre d'enfants correct!");
+                    $("#nbEnf").focus();
+                    $("#nbEnf").css({"border": "1px solid #ff0000"});
+                    return false;
+                }
+
+                if (numberOfChild == 0) {
+                    $("#msg").fadeOut(3000);
+                    $("#zeroEnf").fadeIn(3000);
+                    return false;
+                }
+
+                $("#enf1").show(0);
+                $("#verif2").show(0);
+                let child2 = (numberOfChild >= 2) ? "block" : "none";
+                $("#enf2").css({"display":child2});
+                let child3 = (numberOfChild >= 3) ? "block" : "none";
+                $("#enf3").css({"display":child3});
+            })
+        })
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <table border="1" id="customers">
+        <tr><th>Name</th><th>Email</th></tr>
+        <tr><td>Eve</td><td>eve@gmail.com</td></tr>
+        <tr><td>Nick</td><td>nick@yahooo.com</td></tr>
+        <tr><td>Didi</td><td>didi@didi.net</td></tr>
+        <tr><td>Tedy</td><td>tedy@tedy.com</td></tr>
+    </table>
+
+    Email: <input type="text" name="email" />
+    <button onclick="deleteByEmail()">Delete</button>
+    <div id="result" />
+
+    <script>
+        function deleteByEmail() {
+            let emailsTds = document.querySelectorAll('table tr td:nth-child(2)');
+            //let tableCol = document.querySelectorAll('#customers tr td:nth-child(2)');
+            let deleted = false;
+
+            for (let email of emailsTds) {
+                if (email.textContent == document.getElementsByName('email')[0].value) {
+                    email.parentNode.parentNode.removeChild(email.parentNode);
+                    deleted = true;
+                }
+            }
+
+            document.getElementById('result').textContent = deleted ? "Deleted." : "Not found."
+        }
+    
+    </script>
+</body>
+</html>

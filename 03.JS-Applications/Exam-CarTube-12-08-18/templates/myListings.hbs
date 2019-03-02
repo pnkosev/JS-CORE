@@ -1,0 +1,18 @@
+{{#each myCars}}
+<div class="my-listing">
+    <p id="listing-title">{{title}}</p>
+    <img src="{{imageUrl}}">
+
+    <div class="listing-props">
+        <h2>Brand: {{brand}}</h2>
+        <h3>Model: {{model}}</h3>
+        <h3>Year: {{year}}</h3>
+        <h3>Price: {{price}} $</h3>
+    </div>
+    <div class="my-listing-buttons">
+        <a href="#" class="my-button-list details" data-id="{{_id}}" id="yo">Details</a>
+        <a href="#" class="my-button-list edit" data-id="{{_id}}" id="yoo">Edit</a>
+        <a href="#" class="my-button-list delete" data-id="{{_id}}" id="yooo">Delete</a>
+    </div>
+</div>
+{{/each}}

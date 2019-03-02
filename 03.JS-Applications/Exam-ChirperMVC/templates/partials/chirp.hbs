@@ -1,0 +1,14 @@
+<article class="chirp">
+    <div class="titlebar">
+        <a href="#/author" class="chirp-author">{{author}}</a>
+        <span class="chirp-time">{{time}}</span>
+    </div>
+    <p>{{text}}</p>
+    {{#if isAuthor}}
+    <form action="#/delete" method="post">
+        <input type="hidden" name="chirpId" value="{{_id}}">
+        <input type="submit" class="button-carDetails" value="Delete">
+    </form>
+    {{/if}}
+    <br>
+</article>

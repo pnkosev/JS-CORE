@@ -1,0 +1,32 @@
+{{#if isLoggedIn}}
+{{> header}}
+{{else}}
+<section id="viewLogin">
+    <div class="content">
+        <form id="formLogin" class="form" action="#/login" method="POST">
+            <label>Username</label>
+            <input name="username" type="text">
+            <label>Password</label>
+            <input name="password" type="password">
+            <input id="btnLogin" value="Sign In" type="submit">
+            <a href="#/register">Register</a>
+        </form>
+    </div>
+</section>
+
+<section id="viewRegister">
+    <div class="content">
+        <form class="form" id="formRegister" action="#/register" method="POST">
+            <label>Username</label>
+            <input name="username" type="text">
+            <label>Password</label>
+            <input name="password" type="password">
+            <label>Repeat Password</label>
+            <input name="repeatPass" type="password">
+            <input id="btnRegister" value="Register" type="submit">
+            <a href="#/login">Log in</a>
+        </form>
+    </div>
+</section>
+{{/if}}
+{{> footer}}

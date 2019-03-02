@@ -1,0 +1,10 @@
+{{#each flights}}
+{{#if isPublished}}
+<a href="#" class="added-flight" data-id="{{_id}}">
+    <img src="{{image}}"
+        alt="" class="picture-added-flight">
+    <h3>{{destination}}</h3>
+    <span>from {{origin}}</span><span>{{departure}}</span>
+</a>
+{{/if}}
+{{/each}}

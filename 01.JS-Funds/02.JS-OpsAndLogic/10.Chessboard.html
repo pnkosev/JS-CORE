@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body { background: #CCC; }
+
+        .chessboard { display: inline-block; }
+        
+        .black, .white { 
+            width:50px; height:50px;
+            display: inline-block; 
+        }
+
+        .black { background: black; }
+        
+        .white { background: white; }
+    </style>
+    <body>
+        <script>
+            function chessboard(size) {
+                let html = '<div class="chessboard">\n';
+                for (let row = 0; row < size; row++) {
+                    html += '  <div>\n';
+                    let color = (row % 2 === 0) ? 'black' : 'white';
+                    for (let col = 0; col < size; col++) {
+                        html += `    <span class="${color}"></span>\n`;
+                        color = (color === 'white') ? 'black' : 'white';
+                    }
+                    html += '  </div>\n';   
+                }
+                return html + '</div>';
+            }
+            document.body.innerHTML = chessboard(3);
+        </script>
+    </body>
+</html>

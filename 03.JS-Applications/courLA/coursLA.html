@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        @media screen and (min-width: 1200px) {
+            .navigation-ordi {
+                width: 100%;
+                height: 10vh;
+                background-color: #cccccc;
+                border: 1px solid black;
+                margin-top: -8px;
+                display: flex;
+                text-align: center;
+            }
+
+            .navigation-ordi div {
+                width: 40%;
+                height: 5vh;
+                float: left;
+                margin: auto;
+                background-color: #666666;
+                color: aliceblue;
+                display: flex;
+                text-align: center;
+            }
+
+            .navigation-ordi div:hover {
+                cursor: pointer;
+                width: 40%;
+                height: 5vh;
+                float: left;
+                margin: auto;
+                background-color: white;
+                color: black;
+                display: flex;
+                text-align: center;
+            }
+
+            .navigation-ordi div p {
+                margin: auto;
+            }
+
+            .navigation-mobile {
+                display: none;
+            }
+
+            .bloc1 {
+                clear: both;
+                width: 30%;
+                height: 7vh;
+                margin-top: 10vh;
+                margin-left: auto;
+                margin-right: auto;
+                border: 3px solid rgb(107, 28, 255);
+                border-radius: 10px;
+                background-color: black;
+                display: flex;
+                text-align: center;
+            }
+
+            .bloc2 {
+                margin: auto;
+                font-size: 19pt;
+                color: gold;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            .bloc3 {
+                width: 15%;
+                height: 15vh;
+                margin-left: 15%;
+                margin-top: 15vh;
+                float: left;
+                display: flex;
+                text-align: center;
+                display: none;
+            }
+
+            .bloc3 img {
+                width: 100%;
+                height: 150%;
+                margin: auto;
+                opacity: 0.5;
+            }
+
+            .bloc4 {
+                width: 26%;
+                height: 18vh;
+                margin-left: 5%;
+                margin-top: 15vh;
+                margin-bottom: 10vh;
+                float: left;
+                overflow-y: scroll;
+                border: 1px solid black;
+                padding: 1% 2% 1% 2%;
+                font-size: 13pt;
+                font-weight: bold;
+            }
+
+            .bloc5 {
+                width: 15%;
+                height: 15vh;
+                margin-right: 15%;
+                margin-top: 15vh;
+                float: right;
+                display: flex;
+                text-align: center;
+                display: none;
+            }
+
+            .bloc5 img {
+                width: 100%;
+                height: 150%;
+                margin: auto;
+            }
+
+            .bloc6 {
+                clear: both;
+                width: 76%;
+                height: 18vh;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 15vh;
+                overflow-y: scroll;
+                border: 2px solid black;
+                padding: 1% 2% 1% 2%;
+                font-size: 15pt;
+                font-family: Arial, Helvetica, sans-serif;
+                font-style: italic;
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1199px) and (orientation: portrait) {
+            .navigation-ordi {
+                display: none;
+            }
+
+            .navigation-mobile {
+                width: 100%;
+                height: 5vh;
+                background-color: #cccccc;
+            }
+
+            .menu {
+                margin-left: 2%;
+                font-size: 30pt;
+            }
+
+            .sous-menu {
+                display: none;
+            }
+
+            .bloc1 {
+                width: 60%;
+                height: 10vh;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5vh;
+                border: 3px solid rgb(107, 28, 255);
+                border-radius: 10px;
+                background-color: black;
+                display: flex;
+                text-align: center;
+            }
+
+            .bloc2 {
+                margin: auto;
+                font-size: 15pt;
+                color: gold;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            .bloc3 {
+                width: 50%;
+                height: 15vh;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5vh;
+                display: flex;
+                text-align: center;
+                display: none;
+            }
+
+            .bloc3 img {
+                width: 100%;
+                height: 100%;
+                margin: auto;
+            }
+
+            .bloc4 {
+                width: 76%;
+                height: 18vh;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5vh;
+                overflow-y: scroll;
+                border: 1px solid black;
+                padding: 1% 2% 1% 2%;
+                font-size: 13pt;
+                display: none;
+            }
+
+            .bloc5 {
+                width: 50%;
+                height: 15vh;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5vh;
+                display: flex;
+                display: none;
+                text-align: center;
+            }
+
+            .bloc5 img {
+                width: 100%;
+                height: 100%;
+                margin: auto;
+            }
+
+            .bloc6 {
+                width: 76%;
+                height: 18vh;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5vh;
+                overflow-y: scroll;
+                border: 2px solid black;
+                padding: 1% 2% 1% 2%;
+                font-size: 15pt;
+                font-family: Arial, Helvetica, sans-serif;
+                display: none;
+                font-style: italic;
+            }
+        }
+
+        @media screen and (max-width: 1199px) and (orientation: landscape) {
+
+            .navigation-ordi {
+                display: none;
+            }
+
+            .navigation-mobile {
+                width: 100%;
+                height: 15vh;
+                background-color: #cccccc;
+            }
+
+            .menu {
+                margin-left: 2%;
+                font-size: 30pt;
+            }
+
+            .sous-menu {
+                display: none;
+            }
+
+            .bloc1 {
+                width: 80%;
+                height: 15vh;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5vh;
+                border: 3px solid rgb(107, 28, 255);
+                border-radius: 10px;
+                background-color: black;
+                display: flex;
+                text-align: center;
+            }
+
+            .bloc2 {
+                margin: auto;
+                font-size: 17pt;
+                color: gold;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            .bloc3 {
+                width: 30%;
+                height: 15vh;
+                margin-left: 5%;
+                margin-top: 7vh;
+                float: left;
+                display: flex;
+                text-align: center;
+            }
+
+            .bloc3 img {
+                width: 100%;
+                height: 150%;
+                margin: auto;
+            }
+
+            .bloc4 {
+                width: 51%;
+                height: 18vh;
+                margin-left: 5%;
+                margin-right: auto;
+                margin-top: 7vh;
+                margin-bottom: 7vh;
+                float: left;
+                overflow-y: scroll;
+                border: 1px solid black;
+                padding: 1% 2% 1% 2%;
+                font-size: 13pt;
+            }
+
+            .bloc5 {
+                clear: both;
+                width: 50%;
+                height: 50vh;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 7vh;
+                margin-bottom: 7vh;
+                display: flex;
+                text-align: center;
+            }
+
+            .bloc5 img {
+                width: 100%;
+                height: 100%;
+                margin: auto;
+            }
+
+            .bloc6 {
+                clear: both;
+                width: 76%;
+                height: 30vh;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 7vh;
+                overflow-y: scroll;
+                border: 2px solid black;
+                padding: 1% 2% 1% 2%;
+                font-size: 15pt;
+                font-family: Arial, Helvetica, sans-serif;
+                font-style: italic;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigation-ordi">
+        <div>
+            <p>Images</p>
+        </div>
+        <div>
+            <p>Texte</p>
+        </div>
+    </div>
+    <div class="navigation-mobile">
+        <div class="menu">
+            ...
+            <div class="sous-menu">
+                Images
+            </div>
+            <div class="sous-menu">
+                Images
+            </div>
+        </div>
+    </div>
+    <div class="bloc1">
+        <div class="bloc2">My first css project</div>
+    </div>
+    <div class="bloc3">
+        <img src="./image1.jpeg" />
+    </div>
+    <div class="bloc4">
+        We all love cats. They are also a fun way to learn all the HTTP status codes.
+        Your task is to refactor the given html and to create a template to represent each cat card block on it’s own.
+        After you have created the templete render it into the div with id “allCats”.
+        A cat has an id, statusCode, statusMessage and imageLocation. The cats are seeded using the function from the
+        js file named catSeeder.js
+        Each card block has a button that unveils status code information connected to each cat. You should toggle the
+        button and change it’s text from “Show status code” to “Hide status code”.
+    </div>
+    <div class="bloc5">
+        <img src="./image2.jpg" />
+    </div>
+    <div class="bloc6">
+        Днес денят ми започна добре- събудих се в 7ч и се чуствах добре. Имах много интересен сън- апокалиптичен. Бях с
+        Мария на някакво игрище; бяхме и с още някаква двойка, имаше и други хора. Не съм сигурен дали действието се
+        развиваше във Франция или в България. Изведнъж някакви много наситено черни облаци се появиха на небето
+        недалече от нас. Казах, че веднага трябва да тръгваме. Не ме взеха на сериозно. Изведнъж се забеляза някаква
+        вълна на разрушение. По пътя си тя поразяваше всичко- имаше експлозии, хора умираха... Настана паника. Стана
+        ясно, че няма как да избягаме- вълната се приближаваше прекалено бързо. Застанахме измежду някакви сгради
+        недалеч от самото игрище- нямаше смисъл да бягаме повече, а да се крием в сградите беше още по безмислено,
+        защото вълната като че ли поразяваше най-вече тях и те биваха изпепелявани. Започнахме да се молим (или поне
+        аз). Не ни оставаше много. Обаче изведнъж всичко спря като по чудо. След това се озовах „вкъщи“- май беше във
+        Франция, но не в апартамента, а в къща, която за първи път виждах, но знаех, че е наша. Имаше напукани
+        прозорци, отвън се виждаше съвсем не много щети. Погледнах през единия прозорец и се виждаше морето. Беше по
+        скоро мрачно, буреносно. Светкавица разцепи небето чак до хоризонта.... Интересен сън наистина, един от
+        най-интереснито, които съм имал. Бърз преглед в интернет показа, че ще има голяма промяна в живота ми. Бях
+        готов за всичко, което Бог ми е отредил. Или поне така мисля...
+
+    </div>
+</body>
+
+</html>

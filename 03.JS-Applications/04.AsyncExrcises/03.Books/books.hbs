@@ -1,0 +1,12 @@
+{{#each books}}
+<div class="book" data-id="{{_id}}">
+    <label>Title</label>
+    <input type="text" class="title" value="{{title}}" />
+    <label>Author</label>
+    <input type="text" class="author" value="{{author}}" />
+    <label>ISBN</label>
+    <input type="number" class="isbn" value="{{isbn}}" />
+    <button class="update">Update</button>
+    <button class="delete">Delete</button>
+</div>
+{{/each}}

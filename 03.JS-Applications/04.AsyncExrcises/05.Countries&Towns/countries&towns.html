@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Countries & Towns</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style type="text/css">
+        .half {
+            width: 30%;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .half>.title {
+            text-align: center;
+            font-size: 22pt;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .inbox {
+            width: 100%;
+            text-align: center;
+            font-size: 17pt;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .controls {
+            text-align: center;
+        }
+
+        .add, .edit {
+            margin-top: 17px;
+            display: none;
+        }
+
+        #errorDiv {
+            background-color: red;
+            display: none;
+            color: black;
+            width: 50%;
+            height: 30px;
+            font-size: 20pt;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="errorDiv"></div>
+    <div class="half">
+        <div class="title">Countries</div>
+        <select class="inbox" id="countries" size="10">
+
+        </select>
+        <div class="controls">
+            <button id="addCountry">Add</button>
+            <button id="editCountry">Edit</button>
+            <button id="deleteCountry">Delete</button>
+            <button id="listTowns">List Towns</button>
+        </div>
+    </div>
+    <div class="half">
+        <div class="title">Towns</div>
+        <select class="inbox" id="towns" size="10">
+
+        </select>
+        <div class="controls">
+            <button id="addTown">Add</button>
+            <button id="editTown">Edit</button>
+            <button id="deleteTown">Delete</button>
+        </div>
+    </div>
+    <form class="add">
+        <label for="newCountry">Country:</label>
+        <input type="text" id="newCountry">
+        <button id="addingCountry">Add Now</button>
+    </form>
+    <form class="edit">
+        <label for="editedCountry">Country:</label>
+        <input type="text" id="editedCountry">
+        <button id="editingCountry">Edit Now</button>
+    </form>
+    <form class="add">
+        <label for="newTown">Town:</label>
+        <input type="text" id="newTown">
+        <label for="newTownCountry">Country:</label>
+        <input type="text" id="newTownCountry">
+        <button id="addingTown">Add Now</button>
+    </form>
+    <form class="edit">
+        <label for="editedTown">Town:</label>
+        <input type="text" id="editedTown">
+        <label for="editedTownCountry">Country:</label>
+        <input type="text" id="editedTownCountry">
+        <button id="editingTown">Edit Now</button>
+    </form>
+
+    <script src="./countriesAndTowns.js"></script>
+    <script>
+        countriesAndTowns()
+    </script>
+</body>
+
+</html>

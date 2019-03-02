@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Airline Administration</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<div id="container">
+    <nav>
+        <div class="left-container">
+            <ul>
+                <li><a href="#" data-target="Catalog" class="userOnlyMenu">Home</a></li>
+                <li><a href="#" data-target="MyFlights" class="userOnlyMenu">Flights</a></li>
+                <li><a href="#" data-target="Login" class="anonymousMenu">Login</a></li>
+                <li><a href="#" data-target="Register" class="anonymousMenu">Register</a></li>
+            </ul>
+        </div>
+        <div class="right-container userOnly">
+            <span id="wlcmMsg">Welcome, {name} |</span>
+            <a href="#" class="log-out">Logout</a>
+        </div>
+    </nav>
+
+    <section id="viewRegister">
+        <h2>Create your account:</h2>
+        <form id="formRegister">
+            <label>Username:</label>
+            <input type="text" name="username" placeholder="Username" >
+            <label>Password:</label>
+            <input type="password" name="pass" placeholder="Password">
+            <label>Repeat Password:</label>
+            <input type="password" name="checkPass" placeholder="Repeat Password">
+            <input type="submit" class="register" value="Register">
+        </form>
+    </section>
+
+    <section id="viewLogin">
+        <h2>Login to your account:</h2>
+        <form id="formLogin">
+            <label>Username:</label>
+            <input type="text" name="username" placeholder="Enter your Email" >
+            <label>Password:</label>
+            <input type="password" name="pass" placeholder="Enter your Password">
+            <input type="submit" class="login" value="Login">
+        </form>
+    </section>
+
+    <section id="viewCatalog" class="background-img">
+        <a href="#" class="add-flight" data-target="AddFlight">Add Flight +</a>
+
+        <div class="added-flights">
+            
+        </div>
+    </section>
+
+    <section id="viewAddFlight">
+        <h2>Add new flight</h2>
+        <form id="formAddFlight">
+            <label>Destination:</label>
+            <input type="text" name="destination" placeholder="Destination" >
+            <label>Origin:</label>
+            <input type="text" name="origin" placeholder="Origin">
+			<label>Departure Date:</label>
+            <input type="date" name="departureDate">
+            <label>Departure Time:</label>
+            <input type="time" name="departureTime">
+            <label>Number of Seats:</label>
+            <input type="number" name="seats" placeholder="0">
+            <label>Cost per seat:</label>
+            <input type="number" step="2" name="cost" placeholder="0.00">
+            <label>Image:</label>
+            <input type="text" name="img">
+            <label>Is Public:</label>
+            <input type="checkbox" name="public" id="isPublic">
+
+            <input type="submit" class="create" value="Create">
+        </form>
+    </section>
+
+    <section id="viewFlightDetails">
+        
+    </section>
+
+    <section id="viewEditFlight">
+        <h2>Edit existing flight</h2>
+        <form id="formEditFlight">
+            <input type="hidden" name="flightId" value="">
+            <label>Destination:</label>
+            <input type="text" name="destination" placeholder="Destination" value="" >
+            <label>Origin:</label>
+            <input type="text" name="origin" placeholder="Origin" value="">
+			<label>Departure Date:</label>
+            <input type="date" id="tt" name="departureDate" value="">
+            <label>Departure Time:</label>
+            <input type="time" name="departureTime" value="">
+            <label>Number of Seats:</label>
+            <input type="number" name="seats" value="">
+            <label>Cost per seat:</label>
+            <input type="number" step="2" name="cost" value="">
+            <label>Image:</label>
+            <input type="text" name="img" value="">
+            <label>Is Public:</label>
+            <input type="checkbox" name="public" id="isPublicEdit">
+            <input type="submit" class="save-changes" value="Save Changes">
+        </form>
+    </section>
+
+    <section id="viewMyFlights">
+        <h3>Your Flights</h3>
+        
+    </section>
+
+    <footer>@SoftUni Airlines</footer>
+</div>
+
+ <div id="notifications">
+        <div id="loadingBox" class="notification">
+            <span>Loading …</span>
+        </div>
+        <div id="infoBox" class="notification">
+            <span id="infoBox1">Info</span>
+        </div>
+        <div id="errorBox" class="notification">
+            <span id="errorBox1">Error</span>
+        </div>
+ </div>
+ <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+ <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="./scripts/models/auth.js"></script>
+<script src="./scripts/models/requester.js"></script>
+<script src="./scripts/app.js"></script>
+</body>
+</html>

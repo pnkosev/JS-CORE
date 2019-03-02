@@ -1,0 +1,28 @@
+{{> header}}
+
+{{#if isAuthor}}
+<section class="detailsMyPet">
+    <h3>{{pet.name}}</h3>
+    <p>Pet counter: <i class="fas fa-heart"></i> {{pet.likes}}</p>
+    <p class="img"><img src="{{pet.imageURL}}"></p>
+    <form action="#/editPet/:{{pet._id}}" method="POST">
+        <input type="hidden" name="category" value="{{pet.category}}">
+        <input type="hidden" name="imageURL" value="{{pet.imageURL}}">
+        <input type="hidden" name="likes" value="{{pet.likes}}">
+        <input type="hidden" name="name" value="{{pet.name}}">
+        <textarea type="text" name="description">{{pet.description}}</textarea>
+        <button class="button"> Save</button>
+    </form>
+</section>
+{{else}}
+<section class="detailsOtherPet">
+    <h3>{{pet.name}}</h3>
+    <p>Pet counter: {{pet.likes}} <a href="#/pet/:{{pet._id}}"><button class="button"><i class="fas fa-heart"></i>
+                Pet</button></a>
+    </p>
+    <p class="img"><img src="{{pet.imageURL}}"></p>
+    <p class="description">{{pet.description}}</p>
+</section>
+{{/if}}
+
+{{> footer}}
