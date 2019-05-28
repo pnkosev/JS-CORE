@@ -1,7 +1,6 @@
 function isMagicMatrix(matrix) {
     let sumRow = row => matrix[row].reduce((a, b) => a + b);
-    let sumCol = col => matrix.map(row => row[col])
-        .reduce((a, b) => a + b);
+    let sumCol = col => matrix.map(row => row[col]).reduce((a, b) => a + b);
 
     if (matrix.length > 0) {
         let targetSum = sumRow(0);

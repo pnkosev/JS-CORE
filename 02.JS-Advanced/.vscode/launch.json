@@ -16,7 +16,7 @@
                 "999999",
                 "--colors",
                 "${file}"
-                //"${workspaceFolder}\\10.2.UnitTestingLab\\tests"
+                // "${workspaceFolder}\\10.2.UnitTestingLab\\tests"
             ],
             "internalConsoleOptions": "openOnSessionStart"
         },
