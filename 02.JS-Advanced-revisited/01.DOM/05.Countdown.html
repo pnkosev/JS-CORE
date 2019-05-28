@@ -1,0 +1,29 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Countdown</title>
+</head>
+
+<body>
+    <input type="text" id="time" style="border:3px solid blue; text-align:center; font-size:2em;" disabled="true" />
+    
+    <script>
+        window.onload = function () {
+            countdown(600);
+        }
+        const field = document.getElementById('time');
+        function countdown(sec) {
+            setInterval(changeTime, 1000);
+
+            function changeTime() {
+                field.value = Math.trunc(sec / 60) + ':' + (sec % 60 < 10 ? '0' + sec % 60 : sec % 60);
+                sec--;
+            }
+        }
+    </script>
+</body>
+
+</html>
